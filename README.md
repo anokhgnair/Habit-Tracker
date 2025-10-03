@@ -28,9 +28,34 @@
 ## 🚀 Installation
 
 ### 1. Clone the Repository
-### 2. Install Dependencies
 ```bash
 git clone https://github.com/anokhgnair/Habit-Tracker.git
 cd Habit-Tracker
+```
+### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
+### 3. Run the App
+```bash
+python Habit_Tracker.py
+```
 
+## ⚡ Create a Standalone Executable (.exe) on Windows
+
+### 1. Install PyInstaller
+```bash
+pip install pyinstaller
+```
+### 2. Prepare Resources
+```bash
+icon_path = resource_path("resources/logo.ico")
+```
+### 3. Generate (.exe)
+```bash
+pyinstaller --onefile --windowed --icon=resources/my_icon.ico Habit_Tracker.py
+```
+## Notes
+- Ensure MongoDB is running locally (mongodb://localhost:27017/) before starting the app.
+- All user data and habit logs are stored in the MongoDB collections.
+- Customize backgrounds, icons, and other resources in the resources folder for branding.
