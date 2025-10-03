@@ -28,6 +28,9 @@
 ## 🚀 Installation
 
 ### 1. Clone the Repository
+### 2. Install Dependencies
 ```bash
 git clone https://github.com/anokhgnair/Habit-Tracker.git
 cd Habit-Tracker
+pip install -r requirements.txt
+
