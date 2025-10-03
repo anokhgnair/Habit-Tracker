@@ -26,7 +26,44 @@
 
 ## **Installation & Usage on PC**
 
-### **1. Clone the repository**
-```bash
+📥 How to Download and Run on Another PC
+Step 1: Install Git
+
+Download Git from https://git-scm.com/downloads
+ and install it.
+
+Step 2: Clone the Repository
+
+Open Command Prompt (Windows) or Terminal (Mac/Linux).
+
+Navigate to the folder where you want to store the project. Example:
+
+cd C:\Users\YourName\Documents
+
+
+Clone the repository:
+
 git clone https://github.com/anokhgnair/Habit-Tracker.git
+
+
+Go into the project folder:
+
 cd Habit-Tracker
+
+Step 3: Install Python Dependencies
+
+Make sure Python is installed. Then run:
+
+pip install -r requirements.txt
+
+
+This installs all necessary libraries to run the app.
+
+Step 4: Run the App
+
+Run the main Python file:
+
+python Habit_Tracker.py
+
+
+The app will start and you can log habits, view your dashboard, and track streaks.
