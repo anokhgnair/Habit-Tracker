@@ -28,5 +28,5 @@
 
 ### **1. Clone the repository**
 ```bash
-git clone https://github.com/<your-username>/HabitGame.git
-cd HabitGame
+git clone https://github.com/anokhgnair/Habit-Tracker.git
+cd Habit-Tracker
