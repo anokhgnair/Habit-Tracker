@@ -1,69 +1,33 @@
-# 🎮 Habit Game — Gamify Your Daily Habits
+# Habit Tracker 🎯
 
-**Habit Game** is a fun, interactive habit tracker that turns daily routines into a game. Log good and bad habits, earn points, track streaks, level up, and visualize your progress with charts and calendars.
-
----
-
-## **Features**
-- Log good & bad habits with points system ✅  
-- Track daily streaks and progress 🔥  
-- Undo mistakes with one click ↩️  
-- Monthly calendar view with color-coded daily points 📅  
-- Daily pie chart showing good vs bad habits 📊  
-- Secure your app with a 4-digit PIN 🔒  
-- Interactive, easy-to-use dashboard  
+**Habit Tracker** is a Python-based application designed to help you monitor your daily habits, track points, and maintain streaks. It features a dashboard, monthly calendar, habit logging, and a simple gamified system to keep you motivated.
 
 ---
 
-## **Tech Stack**
-- Python 3  
-- Tkinter (GUI)  
-- MongoDB (local database)  
-- Matplotlib (charts)  
-- Pillow (image handling)  
+## Features
+
+- Login/Signup with "Remember Me" functionality
+- Daily habit logging with points system
+- Undo last habit entry
+- Gamified leveling system
+- Monthly calendar view with habit points
+- PIN lock for app security
+- Settings to add/edit habits or manage app PIN
+- Daily habit summary with pie chart visualization
+- Customizable resources (backgrounds, icons, etc.)
 
 ---
 
-## **Installation & Usage on PC**
+## 📥 Download & Run
 
-📥 How to Download and Run on Another PC
-Step 1: Install Git
+### Step 1: Install Git
+Download and install Git from [https://git-scm.com/downloads](https://git-scm.com/downloads).
 
-Download Git from https://git-scm.com/downloads
- and install it.
+### Step 2: Clone the Repository
+Open Command Prompt (Windows) or Terminal (Mac/Linux):
 
-Step 2: Clone the Repository
-
-Open Command Prompt (Windows) or Terminal (Mac/Linux).
-
-Navigate to the folder where you want to store the project. Example:
-
-cd C:\Users\YourName\Documents
-
-
-Clone the repository:
-
+```bash
+cd <your-desired-folder>
 git clone https://github.com/anokhgnair/Habit-Tracker.git
-
-
-Go into the project folder:
-
 cd Habit-Tracker
 
-Step 3: Install Python Dependencies
-
-Make sure Python is installed. Then run:
-
-pip install -r requirements.txt
-
-
-This installs all necessary libraries to run the app.
-
-Step 4: Run the App
-
-Run the main Python file:
-
-python Habit_Tracker.py
-
-
-The app will start and you can log habits, view your dashboard, and track streaks.
