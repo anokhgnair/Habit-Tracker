@@ -1,4 +1,4 @@
-# Habit Tracker 🎮1
+# Habit Tracker 🎮
 
 **Habit Tracker** is a Python desktop application designed to gamify your daily habits. Track good and bad habits, earn points, maintain streaks, and visualize your progress with an intuitive dashboard and monthly calendar view.
 
