@@ -84,7 +84,9 @@ def add_habit_log_for_user(username, habit_name):
         "user": username,
         "habit": habit_name,
         "points": points,
-        "date": datetime.date.today().isoformat()
+        # store ISO date for day-based grouping and a precise timestamp for ordering
+        "date": datetime.date.today().isoformat(),
+        "timestamp": datetime.datetime.utcnow()
     }
     logs_collection.insert_one(entry)
 
@@ -125,14 +127,16 @@ def add_habit_log_for_user(username, habit_name):
     return points
 
 def undo_last_habit_log(username):
-    last_log = logs_collection.find({"user": username}).sort("date", -1).limit(1)
+    # Find the most recently inserted log using timestamp (fallback to date ordering)
+    last_log = logs_collection.find({"user": username}).sort([("timestamp", -1), ("date", -1)]).limit(1)
     last_log = list(last_log)
     if not last_log:
         return False
 
     logs_collection.delete_one({"_id": last_log[0]["_id"]})
 
-    logs = list(logs_collection.find({"user": username}).sort("date", 1))
+    # Fetch logs ordered by timestamp ascending so we can recompute streaks in chronological order
+    logs = list(logs_collection.find({"user": username}).sort([("timestamp", 1), ("date", 1)]))
     total_points = sum(l.get("points", 0) for l in logs)
     level = calculate_level(total_points)
 
@@ -666,6 +670,21 @@ class HabitGameApp:
             self.recent_box.insert(tk.END, f"{l['date']}: {l['habit']} ({l['points']} pts)\n")
         self.recent_box.config(state="disabled")
 
+        # Ensure habit buttons and today's chart reflect the latest DB state.
+        try:
+            # Update button enabled/disabled states based on today's logs
+            self.update_habit_buttons_state()
+        except Exception:
+            # Fail-safe: don't crash UI if update fails
+            pass
+
+        try:
+            # Update the daily pie chart (if any logs for today)
+            self.update_daily_pie_chart()
+        except Exception:
+            pass
+
+        # Refresh the monthly calendar (rebuilds calendar tiles)
         self.show_monthly_calendar()
     def handle_habit_click(self, habit_name):
         today = datetime.date.today().isoformat()
