@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Featuress
+## 🌟 Features
 
 - **User Management:** Login, signup, and "Remember Me" functionality  
 - **Habit Tracking:** Log good and bad habits with a points system  
