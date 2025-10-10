@@ -225,7 +225,18 @@ class HabitGameApp:
         self.current_user = None
         self.displayed_year = datetime.date.today().year
         self.displayed_month = datetime.date.today().month
-        self.root.iconbitmap(resource_path("resources/logo.ico"))
+        # Load icon safely: iconbitmap may fail in some environments (PyInstaller temp dir),
+        # so try .ico first and fall back to a PNG via iconphoto.
+        try:
+            ico_path = resource_path("resources/logo.ico")
+            self.root.iconbitmap(ico_path)
+        except Exception:
+            try:
+                img = Image.open(resource_path("resources/logo.png"))
+                self.root.iconphoto(True, ImageTk.PhotoImage(img))
+            except Exception:
+                # final fallback: ignore icon load errors so the app still starts
+                pass
 
         self.style = ttk.Style()
         self.style.configure("TLabel", font=("Arial", 11))
