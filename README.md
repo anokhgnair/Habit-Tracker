@@ -17,7 +17,7 @@
 
 ---
 
-## 🛠️ Prerequisites
+## 🛠️ Prerequisitesss
 
 - Python ≥ 3.10  
 - Git  
